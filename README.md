@@ -34,7 +34,7 @@ dev_dependencies:
 ## Function:
   1. 사람 등록하기
   2. 분석하기
-  3. 
+  3. 부가적인 것들
   
   1. 사람 등록하기 
   - 이름을 TextField안에 작성한다
@@ -44,4 +44,7 @@ dev_dependencies:
   2. 분석하기
   - 얼굴에 초점을 맞추는 상태에서 중지버튼을 누를 때까지 대화한다
   
+  3. 부가적인 것들
+  - Navigation View, Bottom Navigation View 등을 추가하여 편하게 바로 이동 가능하다
+  - ? 버튼을 누르면 간단한 설명이 나온다
   
