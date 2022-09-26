@@ -24,16 +24,20 @@ def create_app():
     face_exps = face_exp()
     print('\n\nServer Initialized.')
 
-    @app.route('/', methods=['POST'])
+    @app.route('/', methods=['POST', 'GET'])
     def post():
-        print("POST : {}".format(datetime.now()))
-        
-        print('recieved file : {}'.format(request.files))
-        # 오디오 파일 처리
-        if 'audio' in request.files:
-            res = handle_audio(request, nlp)
-        if 'image' in request.files:
-            res = handle_img(request, face_exps, face_rec)
-        return jsonify(res)
+            if (request.method == 'POST'):
+                print("POST : {}".format(datetime.now()))
+                
+                print('recieved file : {}'.format(request.files))
+                # 오디오 파일 처리
+                if 'audio' in request.files:
+                    res = handle_audio(request, nlp)
+                if 'image' in request.files:
+                    res = handle_img(request, face_exps, face_rec)
+                return jsonify(res)
+            else :
+                return "Server Activated."
+    
     
     return app
